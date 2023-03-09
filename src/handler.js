@@ -123,6 +123,14 @@ const deleteNoteById = (request, h) => {
 
     return response;
   }
+
+  const response = h.response({
+    status: "fail",
+    message: "Gagal menghapus catatan. Id tidak ditemukan.",
+  });
+  response.code(404);
+
+  return response;
 };
 
 module.exports = {
